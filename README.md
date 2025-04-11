@@ -206,12 +206,14 @@ Abra o arquivo `first.sh` no editor de texto `nano`:
 ```
 nano scripts/first.sh
 ```
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
-### Vamos seguir os comandos abaixo para iniciar os downloads de arquivos diretamente no NCBI
+## Vamos seguir os comandos abaixo para iniciar os downloads de arquivos diretamente no NCBI
 
 ```bash
 wget --output-document sratoolkit.tar.gz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
