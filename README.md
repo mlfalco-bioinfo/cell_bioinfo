@@ -96,6 +96,15 @@ Liste o conteúdo com detalhes, incluindo arquivos ocultos e tamanhos legíveis:
 ```
 ls -lah bioinfo_exercicies
 ```
+#### Comando para instalação do NANO
+```bash
+sudo apt update
+sudo apt install nano
+```
+#### Comando para instalação do UNZIP
+```bash
+sudo apt install unzip
+```
 
 ### 3. Download de Arquivos
 
@@ -168,7 +177,7 @@ tail bioinfo_exercicies/protein/protein.fasta
 ```
 
 #### 6.2. Concatenar e Exibir Conteúdo de Arquivos
-Use `cat` para exibir o conteúdo do arquivo `rna.fasta`:
+Use `cat` (`zcat`e `zless`) para exibir o conteúdo do arquivo `rna.fasta`:
 
 ```
 cat bioinfo_exercicies/rna/rna.fasta
