@@ -1,0 +1,11 @@
+{
+  "name": "Minimal Ubuntu Codespace",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "remoteUser": "codespace",
+  "postCreateCommand": "echo 'Welcome to your minimal Ubuntu Codespace!'"
+}
