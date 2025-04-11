@@ -6,10 +6,16 @@
 
 
 ## Tutorial de Comandos Básicos do Bash Aplicados à Genômica
+
+### Download do material de aula
+
+```bash
+wget https://github.com/mlfalco-bioinfo/Intro_Bioinfo/archive/refs/heads/main.zip
+``
+
 ### Estrutura de Diretórios e Arquivos
 
 Os exercícios serão baseados na seguinte estrutura de diretórios:
-
 ```
 Documents/SEBIO2024/Intro_Bioinfo/
 ├── bioinfo_exercicies
