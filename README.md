@@ -11,7 +11,7 @@
 
 ```bash
 wget https://github.com/mlfalco-bioinfo/Intro_Bioinfo/archive/refs/heads/main.zip
-``
+```
 
 ### Estrutura de Diretórios e Arquivos
 
