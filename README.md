@@ -269,6 +269,30 @@ prefetch SRR390728
 fastq-dump --split-3 SRR390728/
 ```
 
+
+#### Instalação do EntrezDirect
+
+```bash
+sh -c "$(curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/setup.sh)"
+```
+
+#### Adicionar no $PATH
+
+```bash
+export PATH=$PATH:$HOME/edirect
+```
+
+#### Reload do SHELL
+
+```bash
+source ~/.bashrc
+```
+
+#### Teste de Instalação do EntrezDirect
+```bash
+esearch -db pubmed -query "cancer" | efetch -format abstract | head
+```
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Instalação das ferramentas de Controle de Qualidade
