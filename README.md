@@ -1,4 +1,4 @@
-# Cell Bioinfo (Unicentro) - I Curso de Aperfeiçoamento
+---# Cell Bioinfo (Unicentro) - I Curso de Aperfeiçoamento
 
 ### Acesse seu GitHub Codespace pelo link abaixo:
 
@@ -336,3 +336,65 @@ sudo apt install python3-pip
 ```python
 pip install multiqc
 ```
+
+‐-------‐--------------------------------
+
+# Uso do Trimmomatic para Dados Illumina Paired-End
+
+O Trimmomatic é uma ferramenta amplamente utilizada para a filtragem e limpeza de leituras de sequenciamento de dados Illumina. Aqui está um exemplo de uso para dados **paired-end**.
+
+## Pré-requisitos
+- Trimmomatic instalado
+- Java instalado
+- Arquivos `.fastq.gz` dos pares de leitura (R1 e R2)
+
+## Comando básico
+```bash
+java -jar trimmomatic-0.39.jar PE \
+  -threads 4 \
+  -phred33 \
+  amostra_R1.fastq.gz amostra_R2.fastq.gz \
+  amostra_R1_paired.fastq.gz amostra_R1_unpaired.fastq.gz \
+  amostra_R2_paired.fastq.gz amostra_R2_unpaired.fastq.gz \
+  ILLUMINACLIP:adapters.fa:2:30:10 \
+  LEADING:3 \
+  TRAILING:3 \
+  SLIDINGWINDOW:4:15 \
+  MINLEN:36
+```
+
+## Explicando os parâmetros
+- `PE`: modo paired-end
+- `-threads 4`: usa 4 threads para processamento paralelo
+- `-phred33`: codificação de qualidade (verifique se seus dados usam phred33 ou phred64)
+- `amostra_R1.fastq.gz` e `amostra_R2.fastq.gz`: arquivos de entrada
+- Arquivos de saída:
+  - `*_paired.fastq.gz`: leituras mantidas com pares válidos
+  - `*_unpaired.fastq.gz`: leituras cujo par foi descartado
+- `ILLUMINACLIP:adapters.fa:2:30:10`: remove adaptadores com base no arquivo `adapters.fa`
+- `LEADING:3`: remove bases com qualidade <3 no início
+- `TRAILING:3`: remove bases com qualidade <3 no fim
+- `SLIDINGWINDOW:4:15`: faz uma média de qualidade em uma janela de 4 bases, cortando quando <15
+- `MINLEN:36`: descarta leituras com menos de 36 bases após o trimming
+
+## Arquivo de adaptadores
+Você pode usar um arquivo de adaptadores como o `TruSeq3-PE.fa`, incluído no pacote do Trimmomatic ou baixar [aqui](https://github.com/timflutre/trimmomatic/blob/master/adapters/TruSeq3-PE.fa).
+
+## Exemplo com gzip no output
+```bash
+java -jar trimmomatic-0.39.jar PE \
+  -threads 4 \
+  -phred33 \
+  -trimlog trimlog.txt \
+  amostra_R1.fastq.gz amostra_R2.fastq.gz \
+  amostra_R1_paired.fastq.gz amostra_R1_unpaired.fastq.gz \
+  amostra_R2_paired.fastq.gz amostra_R2_unpaired.fastq.gz \
+  ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 \
+  SLIDINGWINDOW:4:20 \
+  MINLEN:50
+```
+
+## Referência
+Bolger, A. M., Lohse, M., & Usadel, B. (2014). *Trimmomatic: A flexible read trimming tool for Illumina NGS data*. Bioinformatics, 30(15), 2114–2120.
+
+---
