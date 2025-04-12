@@ -1,4 +1,4 @@
----# Cell Bioinfo (Unicentro) - I Curso de Aperfeiçoamento
+# Cell Bioinfo (Unicentro) - I Curso de Aperfeiçoamento
 
 ### Acesse seu GitHub Codespace pelo link abaixo:
 
@@ -347,6 +347,11 @@ O Trimmomatic é uma ferramenta amplamente utilizada para a filtragem e limpeza 
 - Trimmomatic instalado
 - Java instalado
 - Arquivos `.fastq.gz` dos pares de leitura (R1 e R2)
+
+## Download Trimmomatic
+```bash
+wget https://github.com/usadellab/Trimmomatic/files/5854859/Trimmomatic-0.39.zip
+```
 
 ## Comando básico
 ```bash
