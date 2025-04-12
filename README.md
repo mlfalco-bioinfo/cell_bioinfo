@@ -354,6 +354,7 @@ wget https://github.com/usadellab/Trimmomatic/files/5854859/Trimmomatic-0.39.zip
 ```
 
 ## Comando básico
+
 ```bash
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE   -threads 2   -phred33   SRR390728_1.fastq SRR390728_2.fastq   SRR390728_1_paired.fastq.gz SRR390728_1_unpaired.fastq.gz   SRR390728_2_paired.fastq.gz SRR390728_2_unpaired.fastq.gz   ILLUMINACLIP:Trimmomatic-0.39/adapters/TruSeq3-PE.fa:2:30:10   LEADING:3   TRAILING:3   SLIDINGWINDOW:4:15   MINLEN:36
 ```
